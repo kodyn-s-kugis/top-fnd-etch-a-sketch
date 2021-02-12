@@ -50,9 +50,19 @@ function createCell() {
 }
 
 /*-------------------------------------*
+  #Delete Cell
+*-------------------------------------*/
+function deleteCells() {
+  // Delete Children Nodes
+  while (container.firstChild) container.removeChild(container.firstChild);
+}
+
+/*-------------------------------------*
   #Editting Cell
 *-------------------------------------*/
 container.addEventListener(`mouseover`, (e) => {
+  if (e.target === container) return;
+
   // Variables
   const cell = e.target;
 
@@ -63,4 +73,4 @@ container.addEventListener(`mouseover`, (e) => {
 /*-------------------------------------*
   #Testing
 *-------------------------------------*/
-createGrid(32, 32);
+createGrid(16, 16);
