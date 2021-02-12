@@ -1,0 +1,48 @@
+/*-------------------------------------*
+  #Initial CSS
+*-------------------------------------*/
+
+:root {
+  --row: 0;
+  --col: 0;
+  --cell-size: 32px;
+  --bgd-color-primary: white;
+  --bgd-color-painted: black;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  display: grid;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*-------------------------------------*
+  #Container CSS
+*-------------------------------------*/
+.container {
+  margin: auto;
+  display: grid;
+  grid-template: repeat(var(--row), var(--cell-size)) / repeat(
+      var(--col),
+      var(--cell-size)
+    );
+  justify-content: center;
+}
+
+.container-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  border: 1px solid black;
+}
